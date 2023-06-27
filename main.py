@@ -48,7 +48,7 @@ class PongGame(Widget):
         if self.ball.x < self.x:
             self.player2.score += 1
             self.serve_ball(vel=(4, 0))
-            
+
         if self.ball.right > self.width:
             self.player1.score += 1
             self.serve_ball(vel=(-4, 0))
@@ -61,6 +61,7 @@ class PongGame(Widget):
 
 class PongApp(App):
     def build(self):
+
         game = PongGame()
         game.serve_ball()
         Clock.schedule_interval(game.update, 1.0/60.0)
